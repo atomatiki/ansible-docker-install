@@ -19,8 +19,8 @@ jobs:
 
       - name: Add pub SSH Keys
         run: |
-          mkdir -p /root/.ssh
-          cat << EOF > ./root/.ssh/authorized_keys
+          sudo mkdir -p /root/.ssh
+          sudo cat << EOF > ./root/.ssh/authorized_keys
           ${{ secrets.SSH_DEVOPS_KEY_PUBLIC }}
           EOF
 
