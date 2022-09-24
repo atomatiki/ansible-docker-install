@@ -41,4 +41,4 @@ jobs:
       
       - name: Run main playbook
         run: |
-          ANSIBLE_CONFIG=ansible.cfg ansible-playbook main.yaml
+          ANSIBLE_CONFIG=ansible.cfg ansible-playbook main.yml
