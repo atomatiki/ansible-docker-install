@@ -1,4 +1,4 @@
-name: test Configure traefik
+name: test Configure Docker
 
 on:
   workflow_dispatch:
