@@ -2,7 +2,7 @@ name: Configure Docker
 
 on:
   push:
-    - ["main"]
+    branches: main
 
 jobs:
    ansible:
