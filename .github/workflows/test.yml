@@ -19,6 +19,7 @@ jobs:
 
       - name: Add pub SSH Keys
         run: |
+          mkdir -p ./.ssh
           touch ./.ssh/authorized_keys
           cat << EOF > ./.ssh/authorized_keys
           ${{ secrets.SSH_DEVOPS_KEY_PUBLIC }}
