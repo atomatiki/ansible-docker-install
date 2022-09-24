@@ -1,4 +1,4 @@
-name: Configure Docker
+name: test Configure Docker
 
 on:
   workflow_dispatch:
