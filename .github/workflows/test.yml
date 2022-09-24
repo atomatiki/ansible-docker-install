@@ -19,8 +19,8 @@ jobs:
 
       - name: Add pub SSH Keys
         run: |
-          touch ./ssh/authorized_keys
-          cat << EOF > ./ssh/authorized_keys
+          touch ./.ssh/authorized_keys
+          cat << EOF > ./.ssh/authorized_keys
           ${{ secrets.SSH_DEVOPS_KEY_PUBLIC }}
           EOF
 
