@@ -1,2 +1,3 @@
 # ansible-docker-install-roles
-Install docker with ansible
+
+Install docker in a remote linux {ubuntu} machine using ansible
