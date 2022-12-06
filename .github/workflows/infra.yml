@@ -2,10 +2,11 @@ name: Configure Docker
 
 on:
   workflow_dispatch:
-    inputs:
+    secrets:
       SSH_PRIVATE_KEY:
         type: string
         required: true
+    inputs:
       TARGET_HOST:
         type: string
         required: true
@@ -19,7 +20,7 @@ jobs:
       - name: Add SSH Keys
         run: |
           cat << EOF > devops-key
-          ${{ inputs.SSH_PRIVATE_KEY }}
+          ${{ secrets.SSH_PRIVATE_KEY }}
           EOF
       - name: Update devops private key permissions
         run: |
