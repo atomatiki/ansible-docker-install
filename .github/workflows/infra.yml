@@ -18,6 +18,10 @@ on:
         type: string
         required: false
         default: "root"
+      ANSIBLE_BECOME_PASS:
+        type: string
+        required: false
+        default: "no-password"
 
 jobs:
    ansible:
@@ -61,5 +65,9 @@ jobs:
       
       - name: Run main playbook
         run: |
-          ANSIBLE_CONFIG=ansible.cfg ansible-playbook main.yml
+          if [ "${{ inputs.ANSIBLE_BECOME_PASS }}" != "no-password" ]; then
+            ANSIBLE_CONFIG=ansible.cfg ansible-playbook --ask-become-pass main.yml
+          else
+            ANSIBLE_CONFIG=ansible.cfg ansible-playbook main.yml
+          fi
           
